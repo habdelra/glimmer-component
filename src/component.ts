@@ -191,6 +191,8 @@ class Component {
    */
   didUpdate() { }
 
+  didRender() { }
+
   /**
    * Called before the component has been removed from the DOM.
    */

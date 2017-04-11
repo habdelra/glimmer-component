@@ -117,7 +117,11 @@ export default class ComponentManager implements GlimmerComponentManager<Compone
 
   didUpdateLayout() {}
 
-  didUpdate(bucket: ComponentStateBucket) { }
+  didUpdate(bucket: ComponentStateBucket) {
+    if (!bucket) { return; }
+
+    bucket.component.didRender();
+  }
 
   getDestructor(bucket: ComponentStateBucket): Destroyable {
     if (!bucket) { return; }
